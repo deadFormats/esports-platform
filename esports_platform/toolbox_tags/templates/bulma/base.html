@@ -1,0 +1,64 @@
+{% load static helper_tags %}
+<!DOCTYPE html>
+<html lang="en">
+    {% block document %}
+        {% block head_tag %}
+            {% block meta %}
+            {% endblock %}
+            {% block title %}{% endblock %}
+            {% block cdn_links %}{% endblock %}
+            {% block extra_css %}{% endblock %}
+
+        {% endblock %}
+        {% block body_tag %}
+            {% block header %}
+            {% endblock %}
+            {% block hero %}{% endblock hero %}
+            {% block side_nav %}{% endblock %}
+            {% block page_main %}
+                {% block messages %}
+                    {% if message %}
+                    <div class="messages columns is-desktop">
+                        <div class="column is-4 is-offset-4">
+                            {% for message in messages %}
+                            <div class="message {% if message.tags %}is-{{ message.tags|bulma_message }}{% endif %}">
+                                <div class="message-body">{{ message }}</div>
+                            </div>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                    {% endif %}
+                {% endblock %}
+                {% block content_area %}
+                    {% block content_heading %}{% endblock %}
+                    {% block content %}{% endblock %}
+                {% endblock %}
+            {% endblock %}
+            {% block modal %}{% endblock %}
+            {% block footer %}
+            <footer class="footer">
+                <div class="container">
+                    <div class="content has-text-centered">
+                        <p>
+                            <strong>Esports Organization</strong> by <a href="https://github.com/deadFormats/">Dylan Garrett</a>. Built using with <a href="https://djangoproject.com/">Django 4.1.8</a>
+                            using <a href="https://bulma.io/">Bulma CSS</a>
+                            This source code is licensed <a href="http://opensource.org/licenses/mit-license.php">MIT</a>.
+
+                        </p>
+                        <p>
+                            <a class="icon" href="https://github.com/deadFormats/esports-platform">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </p>
+                    </div>
+                </div>
+            </footer>
+            {% endblock %}
+            {% block javascript %}
+                {% block extra_javascript %}{% endblock %}
+            {% endblock %}
+        {% endblock %}
+
+    {% endblock %}
+</html>
