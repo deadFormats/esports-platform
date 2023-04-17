@@ -1,0 +1,1 @@
+# Esports Platform for Django
