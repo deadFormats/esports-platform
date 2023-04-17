@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'toolbox_tags.apps.ToolboxTagsConfig',
+    'bulma'
+    # 'toolbox_tags.apps.ToolboxTagsConfig',
 ]
 
 MIDDLEWARE = [

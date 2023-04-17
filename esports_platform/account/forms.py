@@ -1,8 +1,11 @@
 from django import forms
+from django.forms import BoundField
+from django.utils.safestring import mark_safe
+from django.templates.loader import get_template
+
 
 
 class LoginForm(forms.Form):
-    """This is the base login form for authentication. Username will be for auth via
-    actual username and via email."""
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
+    
